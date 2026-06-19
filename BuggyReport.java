@@ -43,7 +43,7 @@ public class BuggyReport {
     /** BUG 2: inverted comparison — should allow when roleLevel >= required */
     static boolean allowAccess(int roleLevel, int required) {
         return roleLevel >= required;
-    }
+    } //FIXED
 
     /** BUG 3: integer division — need floating-point average */
     static double average(int[] values) {
