@@ -47,12 +47,12 @@ public class BuggyReport {
 
     /** BUG 3: integer division — need floating-point average */
     static double average(int[] values) {
-        int sum = 0;
+        double sum = 0;
         for (int v : values) {
             sum += v;
         }
         return sum / values.length;
-    }
+    } //FIXED
 
     /** BUG 4: found index never returned */
     static int findFirst(int[] arr, int target) {
