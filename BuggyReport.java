@@ -11,7 +11,7 @@ public class BuggyReport {
         int[] scores = {10, 20, 25};
         System.out.println("average=" + average(scores));
 
-        String label = buildLabel(null);
+        String label = buildLabel("BOB");
         System.out.println("label=" + label);
 
         boolean gate = allowAccess(5, 3);
@@ -33,7 +33,7 @@ public class BuggyReport {
 
     /** BUG 1: missing null guard — NPE when user is null */
     static String buildLabel(String user) {
-        String trimmed = user.trim();
+        String trimmed = user.trim(); //FIXED
         if (trimmed.isEmpty()) {
             return "guest";
         }
@@ -42,7 +42,7 @@ public class BuggyReport {
 
     /** BUG 2: inverted comparison — should allow when roleLevel >= required */
     static boolean allowAccess(int roleLevel, int required) {
-        return roleLevel < required;
+        return roleLevel >= required;
     }
 
     /** BUG 3: integer division — need floating-point average */
