@@ -67,7 +67,7 @@ public class BuggyReport {
     /** BUG 5: off-by-one — i <= length throws or skips wrong */
     static int countWords(String[] words) {
         int c = 0;
-        for (int i = 0; i <= words.length; i++) {
+        for (int i = 0; i <= words.length-1; i++) {
             if (words[i] != null && !words[i].isEmpty()) {
                 c++;
             }
